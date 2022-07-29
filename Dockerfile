@@ -1,7 +1,11 @@
-FROM adoptopenjdk/openjdk15:ubi
-ENV APP_HOME=/usr/app/
-WORKDIR $APP_HOME
-COPY ./*.jar ./app.jar
+FROM tomcat:8.0-alpine
+
+
+
+ADD petclinic.war /usr/local/tomcat/webapps/
+
 EXPOSE 8080
-CMD ["java", "-jar", "app.jar"]
+
+
+
 
